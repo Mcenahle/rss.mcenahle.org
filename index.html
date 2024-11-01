@@ -168,7 +168,7 @@
             // 获取输入框元素
             var input = document.getElementById('rss-url');
             // 设置输入框的值
-            input.value = 'https://blog.mcenahle.com/feed';
+            input.value = 'https://blog.mcenahle.com/feed'; /* 清除URL，以阻止自动输入 */
         };
     </script>
 </head>
@@ -177,19 +177,18 @@
         <h2><i class="bi bi-rss"></i> RSS 阅读器</h2>
         <input type="text" id="rss-url" placeholder="输入 RSS 订阅链接">
         <button onclick="fetchRSS()"><b><i class="bi bi-arrow-return-right"></i> 获取 RSS</b></button>
+        <p><a href="https://open-source.mcenahle.org/" target="_blank"> 本项目开源链接：https://open-source.mcenahle.org/</a> <i class="bi bi-box-arrow-up-right"></i></p>
         <div id="feed"></div>
     </div>
 
     <!-- 右下角的文字 -->
-    <div class="footer-text"><b>RSS 阅读器 - rss.mcenahle.org</b>
-    <br>
-    开源链接：https://github.com/Mcenahle/rss.mcenahle.org</div>
+    <div class="footer-text"><b>RSS 阅读器 - rss.mcenahle.org</b></div>
 
     <script>
         async function fetchRSS() {
             const rssUrl = document.getElementById('rss-url').value;
             const feedContainer = document.getElementById('feed');
-            feedContainer.innerHTML = '<p>加载中...</p>';
+            feedContainer.innerHTML = '<p><i class="bi bi-hourglass-split"></i> 加载中...</p>';
 
             try {
                 const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
