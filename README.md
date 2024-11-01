@@ -7,3 +7,7 @@
 默认值为 `https://blog.mcenahle.com/feed`。
 
 图标为 `favicon.png`。
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Mcenahle/rss.mcenahle.org&type=Date)](https://star-history.com/#Mcenahle/rss.mcenahle.org&Date)
